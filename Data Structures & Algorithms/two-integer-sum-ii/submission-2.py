@@ -1,0 +1,18 @@
+class Solution:
+    # Time O(n)
+    # Space O(1)
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        l = 0
+        r = len(numbers) - 1
+
+        while l < r:
+            sum = numbers[l] + numbers[r]
+            if sum > target:
+                r -= 1
+            elif sum < target:
+                l += 1
+            else:
+                # Problem says 1-indexed (not 0-indexed)
+                return [l + 1, r + 1]
+        return None
+        
